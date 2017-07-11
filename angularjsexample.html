@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AngularJS Example</title>
+<script type="text/javascript" src="angular.min.js"> </script>
+
+<script>
+
+var app = angular.module("myApp", []);
+
+app.controller("myCtrl", function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+});
+
+app.controller('myCtrll', function($scope) {
+    $scope.name = "John Doe";
+});
+</script>
+</head>
+<body ng-app="myApp">
+<p>Result of Expression is {{3+4}}</p>
+    <br/>
+<div ng-controller="myCtrl">
+{{ firstName + " " + lastName }}
+</div>
+<div ng-controller="myCtrll">
+Name: <input ng-model="name">
+<h1>You entered: {{name}}</h1>
+</div>
+<form ng-app="" name="myForm">
+    Email:
+    <input type="email" name="myAddress" ng-model="text">
+    <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+</form>
+    
+   
+</body>
+</html>

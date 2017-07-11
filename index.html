@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Angularjs Example</title>
+  <meta charset="utf-8">
+  <script src="angular.min.js">
+var app = angular.module("myApp", []);
+  
+  
+  
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body ng-app="myApp" ng-init="value1=1;value2=1">
+
+<div class="container-fluid">
+<div class="row">
+  <h1 style="text-align:center">Hello Welcome to AngularJS</h1>
+  <pre>
+  
+  AngularJS is a JavaScript framework. It can be added to an HTML page with a script tag.
+ 
+  Features
+		-> AngularJS is a powerful JavaScript based development framework to create RICH Internet Application(RIA).
+
+		-> AngularJS provides developers options to write client side application (using JavaScript) in a clean MVC(Model View Controller) way.
+
+		-> Application written in AngularJS is cross-browser compliant. AngularJS automatically handles JavaScript code suitable for each browser.
+
+		-> AngularJS is open source, completely free, and used by thousands of developers around the world. 
+		
+   Core Features
+
+		-> Data-binding 
+		-> Scope 
+	    -> Controller 
+		-> Services 
+		-> Filters 
+		-> Directives  
+		-> Routing 
+		-> Deep Linking 
+		-> Dependency Injection 
+		
+		
+Advantages of AngularJS
+-> AngularJS provides capability to create Single Page Application in a very clean and maintainable way.
+-> AngularJS provides data binding capability to HTML thus giving user a rich and responsive experience
+-> AngularJS code is unit testable.
+-> AngularJS uses dependency injection and make use of separation of concerns.
+-> AngularJS provides reusable components.
+-> With AngularJS, developer write less code and get more functionality.
+-> In AngularJS, views are pure html pages, and controllers written in JavaScript do the business processing.
+-> AngularJS applications can run on all major browsers and smart phones including Android and iOS based phones/tablets.
+
+
+Disadvantages of AngularJS
+-> Not Secure - Being JavaScript only framework, application written in AngularJS are not safe. Server side authentication and
+   authorization is must to keep an application secure.
+-> Not degradable - If your application user disables JavaScript then user will just see the basic page and nothing more.
+		
+		
+ 1. Modules
+   
+ -> An AngularJS module defines an application.
+	 
+ -> The module is a container for the different parts of an application.
+     
+ -> The module is a container for the application controllers.
+ 
+ ->Syntax : var app = angular.module("myApp", []);
+
+
+   2. Expression
+	
+->  AngularJS expressions can be written inside double braces: {{ expression }}.
+
+->  AngularJS expressions can also be written inside a directive: ng-bind="expression".
+
+->  AngularJS will resolve the expression, and return the result exactly where the expression is written.
+
+->  Example
+
+   Using Double Braces {{4+4}} 
+   
+   Using ng-bind  value is <span ng-bind="value1+value2"></span>
+  
+  3. Directives
+  
+-> AngularJS lets you extend HTML with new attributes called Directives.
+
+->  AngularJS has a set of built-in directives which offers functionality to your applications.
+
+->  AngularJS also lets you define your own directives.
+  
+->  Some inbuilt directives are 
+      + ng-model
+	  + ng-app
+      + ng-init	 
+      + ng-bind
+      + ng-repeat
+	
+	 
+-> Syntax for creating your own Directive 
+    
+    var app = angular.module("myApp", []);
+    app.directive("w3TestDirective", function() {
+    return {
+              restrict : "A",
+              template : " ",
+            };
+          });	
+  
+  4. Model
+  
+ ->  The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.
+ 
+ ->  Syntax for using Model
+ 
+    Name: <input ng-model="name">
+
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+    $scope.name = "John Doe";
+});
+
+-> The ng-model directive adds/removes the following classes, according to the status of the form field:
+
+	ng-empty
+	ng-not-empty
+	ng-touched
+	ng-untouched
+	ng-invalid
+	ng-dirty
+	ng-pending
+	ng-pristine
+
+-> The ng-model directive provides a two-way binding between the model and the view.
+     - Data binding in AngularJS is the synchronization between the model and the view.
+       When data in the model changes, the view reflects the change, and when data in the
+	   view changes,the model is updated as well. This happens immediately and automatically,
+	   which makes sure that the model and the view is updated at all times.
+
+  5. Data Binding
+  
+ -> Data binding in AngularJS is the synchronization between the model and the view.
+
+  6. Controllers
+  
+ ->  AngularJS controllers control the data of AngularJS applications.
+ 
+ -> The ng-controller directive defines the application controller.
+
+ -> A controller is a JavaScript Object, created by a standard JavaScript object constructor.
+ 
+ -> Syntax is 
+ 
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+    });
+	
+    where
+
+	The AngularJS application is defined by  ng-app="myApp". The application runs inside div.
+
+	The ng-controller="myCtrl" attribute is an AngularJS directive. It defines a controller.
+
+	The myCtrl function is a JavaScript function.
+
+	AngularJS will invoke the controller with a $scope object.
+
+	In AngularJS, $scope is the application object (the owner of application variables and functions).
+
+	The controller creates two properties (variables) in the scope (firstName and lastName).
+
+	The ng-model directives bind the input fields to the controller properties (firstName and lastName).
+	
+7. Scope
+
+-> The scope is the binding part between the HTML (view) and the JavaScript (controller).
+
+-> The scope is an object with the available properties and methods.
+
+-> The scope is available for both the view and the controller.
+
+8. Filters
+
+-> Filters can be added in AngularJS to format data.
+
+-> AngularJS provides filters to transform data:
+
+   currency Format a number to a currency format.
+   date Format a date to a specified format.
+   filter Select a subset of items from an array.
+   json Format an object to a JSON string.
+   limitTo Limits an array/string, into a specified number of elements/characters.
+   lowercase Format a string to lower case.
+   number Format a number to a string.
+   orderBy Orders an array by an expression.
+   uppercase Format a string to upper case.
+   
+-> Syntax is The name is {{ lastName | lowercase }}
+
+9. Routing
+
+-> If you want to navigate to different pages in your application, but you also want the application 
+   to be a SPA (Single Page Application) with no page reloading, you can use the ngRoute module.
+   
+-> Syntax is 
+               var app = angular.module("myApp", ["ngRoute"]);
+               app.config(function($routeProvider) {
+			   $routeProvider
+			   .when("/", {
+               templateUrl : "main.htm"
+                          })
+               .when("/red", {
+               templateUrl : "red.htm"
+               })
+               .when("/green", {
+               templateUrl : "green.htm"
+			   controller : "parisCtrl"
+               })
+               .when("/blue", {
+               templateUrl : "blue.htm"
+			   .otherwise({
+               template : "Nothing has been selected"
+			   
+               });
+               });
+			   app.controller("parisCtrl", function ($scope) {
+               $scope.msg = "I love Paris";
+10. Services
+
+->In AngularJS, a service is a function, or object, that is available for, and limited to, your AngularJS application.
+
+->AngularJS has about 30 built-in services.
+
+-> AngularJS provides many inbuilt services for example, $https:, $route, $window, $location etc.
+
+->AngularJS constantly supervises your application, and for it to handle changes and events properly, 
+AngularJS prefers that you use the $location service instead of the window.location object.
+
+-> There are two ways to create a service.
+		factory
+		service
+
+-> Using factory method
+Using factory method, we first define a factory and then assign method to it.
+
+var mainApp = angular.module("mainApp", []);
+mainApp.factory('MathService', function() {
+   var factory = {};
+   
+   factory.multiply = function(a, b) {
+      return a * b
+   }
+   
+   return factory;
+}); 
+
+-> Using service method
+Using service method, we define a service and then assign method to it. We've also injected an already available service to it.
+
+mainApp.service('CalcService', function(MathService){
+   this.square = function(a) {
+      return MathService.multiply(a,a);
+   }
+});
+
+ 
+11. Tables
+
+-> Table data is normally repeatable by nature. ng-repeat directive can be used to draw table easily.
+
+->syntax is 
+   
+    ng-repeat = "subject in student.subjects"
+          {{ subject.name }}
+          {{ subject.marks }}
+		  
+12. HTML DOM
+
+-> Following directives can be used to bind application data to attributes of HTML DOM Elements.
+
+Sr.No.	Name	   Description
+1	  ng-disabled	disables a given control.
+2	  ng-show	    shows a given control.
+3	  ng-hide	    hides a given control.
+4	  ng-click	    represents a AngularJS click event.
+   
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ </pre>
+  </div>
+</div>
+    
+</body>
+</html>
